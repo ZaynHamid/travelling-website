@@ -1,0 +1,127 @@
+body {
+    font-family: "Mukta", sans-serif;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.hero-section {
+    position: relative;
+    background: url("/assets/pexels-jaime-reimer-14482337.webp") bottom / cover;
+
+}
+
+.benefits {
+    background: #3473b7;
+    padding: 2rem;
+    margin-top: 8rem;
+}
+
+.waterfall {
+    background: url("/assets/pexels-osmany-mederos-14580735.webp") top / cover;
+    margin-top: 8rem;
+}
+
+.attractions {
+    margin-top: 8rem;
+}
+
+.contact-us {
+    margin-top: 8rem;
+    background: #f6f6f6;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.footer {
+    background: #1d1d1f;
+    margin-top: 8rem;
+    padding: 2rem;
+    color: #fff;
+}
+
+.header {
+    background: url("/assets/pexels-athena-2962069.webp") center / cover;
+}
+
+.down {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.card-body p {
+    margin: 0;
+}
+
+#increaseCountBtn,
+#decreaseCountBtn {
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid #1d1d1f;
+    padding: 0 .7rem;
+    font-size: 1.2rem;
+}
+
+#adultCount {
+    font-size: 1.125em;
+}
+
+#x {
+    margin-left: auto;
+    margin-right: 1rem;
+
+}
+
+@media screen and (min-width: 1024px) {
+    .hero-section {
+        height: 70vh;
+    }
+
+
+    .flex-tour {
+        display: flex;
+    }
+
+    .flex-tour>.col-lg-4 {
+        flex: 1;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .card-body {
+        flex-grow: 1;
+    }
+
+    .card-img-top {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+    .waterfall {
+        height: 90vh;
+    }
+
+
+    .pr {
+        width: 50%;
+    }
+
+    .contact-us {
+        padding: 100px;
+    }
+
+    .header {
+        height: 50vh;
+    }
+}

@@ -1,0 +1,1136 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fffcc966dd.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>CR Hotel Rides</title>
+</head>
+
+<body>
+    <div class="container text-end mb-0 mt-2 d-flex gap-2 justify-content-end">
+        <p class="fw-semibold"><i class="fa fa-envelope"></i> &nbsp; info@crhotelrides.com</p>
+        <p class="fw-semibold">
+            <i class="fa fa-whatsapp"></i> &nbsp; +506 8812 6582
+        </p>
+    </div>
+    <nav class="navbar navbar-expand-sm py-0">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">CR Hotel Rides</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-xl text-dark" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+    <div class="header d-flex py-lg-0 py-5 px-3 justify-content-end align-items-center">
+        <div class="container text-light">
+            <h2 class="fw-light display-3">
+                CR Hotel <br> Rides
+            </h2>
+            <p class="fs-2">Safe, Reliable & Eco-Friendly</p>
+        </div>
+    </div>
+    <br><br><br><br><br>
+
+    <div class="container">
+        <h5 id="quoteData"></h5>
+        <div class="d-flex gap-2">
+            <i class=" fa fa-user"></i>
+            <p id="adults"></p>
+        </div>
+        <br><br><br>
+        <h3>Choose your ride</h3>
+
+        <div class="row bg-light rounded-xl my-3 align-items-center py-3">
+            <div class="col-lg-3">
+                <img src="assets/WhatsApp Image 2023-05-27 at 04.35.06.jpeg" class="w-100" />
+            </div>
+            <div class="col-lg-3">
+                <h4>Things included:</h4>
+                <ul class="text-muted" style="font-weight: 600;">
+                    <li>Passengers: 1 - 3 pax</li>
+                    <li> Up to 3 Suitcases</li>
+                    <li>Private Service</li>
+                    <li>Flight monitoring</li>
+                    <li>Courtesy stop at convenience store</li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h4>Travel Time:</h4>
+                <p class="text-muted" id="hoursForCarTwo"></p>
+            </div>
+
+            <div class=" col-lg-3">
+                <h4>Price:</h4>
+                <p class="text-muted" id="priceForCarTwo"></p>
+                <button class=" btn btn-dark"><a href="contact.html" class="text-light text-decoration-none">Book
+                        now</a></button>
+
+            </div>
+
+
+
+
+        </div><br><br>
+
+        <div class="row bg-light rounded-xl my-3 align-items-center py-3">
+            <div class="col-lg-3">
+                <img src="assets/fmdg6sa_1475344.webp" class="w-100" />
+            </div>
+            <div class="col-lg-3">
+                <h4>Things included:</h4>
+                <ul class="text-muted" style="font-weight: 600;">
+                    <li>Passengers: 1 - 9 pax</li>
+                    <li>Up to 9 Suitcases</li>
+                    <li>Private Service</li>
+                    <li>Flight Monitoring</li>
+                    <li>Courtesy stop at convenience store</li>
+                </ul>
+            </div>
+
+
+            <div class="col-lg-3">
+                <h4>Travel Time:</h4>
+                <p class="text-muted" id="hours"></p>
+            </div>
+
+            <div class="col-lg-3">
+                <h4>Price:</h4>
+                <p class="text-muted" id="price"></p>
+                <button class=" btn btn-dark"><a href="contact.html" class="text-light text-decoration-none">Book
+                        now</a></button>
+            </div>
+        </div><br><br>
+
+    </div>
+
+
+
+
+
+    <div class="footer p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h3 class="fw-light fs-1">CR Hotel Rides</h3>
+                    <p class="mt-3 text-light"><i class="fa fa-phone"></i>&nbsp; +506 8812 6582</p>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="fw-light fs-2">Tours</h3>
+                    <p>Visit Costa Rica Tours</p>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="fw-light fs-2">Contact</h3>
+                    <a href="contact.html" class="text-light fs-5 nav-link">Contact us</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const quoteData = localStorage.getItem("quoteData");
+            let price = document.getElementById("price");
+            let hours = document.getElementById("hours");
+            let priceForCarTwo = document.getElementById("priceForCarTwo");
+            let hoursForCarTwo = document.getElementById("hoursForCarTwo");
+
+            if (quoteData) {
+                const data = JSON.parse(quoteData);
+                const from = data.from;
+                const to = data.to;
+                const adult = data.adult;
+                console.log(adult)
+                document.getElementById("quoteData").textContent = `${from} -> ${to}`;
+                document.getElementById("adults").textContent += `${adult}`;
+
+                // From San Jose to 12 Places
+                if (from === "Sjo Airport" && to === "San Jose Downtown") {
+                    price.textContent += "$50 + tax";
+                    hours.textContent += "0.5 hours";
+                    priceForCarTwo.textContent += "$40 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+
+                } else if (from === "Sjo Airport" && to == "Fortuna") {
+                    price.textContent += "$200 + tax";
+                    hours.textContent += "3 hours";
+                    priceForCarTwo.textContent += "$180 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+
+                } else if (from === "Sjo Airport" && to === "Puntarenas") {
+                    price.textContent += "$150 + tax";
+                    hours.textContent += "2 hours";
+                    priceForCarTwo.textContent += "$125 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+
+                } else if (from === "Sjo Airport" && to === "Quepos") {
+                    price.textContent += "$200 + tax";
+                    hours.textContent += "3.5 hours";
+                    priceForCarTwo.textContent += "$180 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+
+                } else if (from === "Sjo Airport" && to === "Monteverde") {
+                    price.textContent += "$200 + tax";
+                    hours.textContent += "3 hours";
+
+                    priceForCarTwo.textContent += "$185 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+
+                } else if (from === "Sjo Airport" && to === "Dominical") {
+                    price.textContent += "$240 + tax";
+                    hours.textContent += "4 hours";
+
+                    priceForCarTwo.textContent += "$220 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+
+                } else if (from === "Sjo Airport" && to === "Cahuita") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "5 hours";
+
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+
+                } else if (from === "Sjo Airport" && to === "Guanacaste 1") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "4.5 hours";
+
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+
+                } else if (from === "Sjo Airport" && to === "Guanacaste 2") {
+                    price.textContent += "$290 + tax";
+                    hours.textContent += "5 hours";
+
+                    priceForCarTwo.textContent += "$280 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+
+                } else if (from === "Sjo Airport" && to === "North Guanacaste") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "5 hours";
+
+                    priceForCarTwo.textContent += "$250 + tax"; hoursForCarTwo.textContent += hours.textContent;
+
+                } else if (from === "Sjo Airport" && to === "Tortuguero") {
+                    price.textContent += "$200 + tax";
+                    hours.textContent += "2.5 hours";
+
+                    priceForCarTwo.textContent += "$180 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+
+                } else if (from === "Sjo Airport" && to === "Liberia Airport") {
+                    price.textContent += "$200 + tax";
+                    hours.textContent += "4 hours";
+
+                    priceForCarTwo.textContent += "$200 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                }
+
+                // From Puntarenas to 12 Places
+                if (from === "Puntarenas" && to === "San Jose Downtown") {
+                    price.textContent += "$150 + tax";
+                    hours.textContent += "2.5 hours";
+
+                    priceForCarTwo.textContent = "$135 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+
+
+                } else if (from === "Puntarenas" && to == "Fortuna") {
+                    price.textContent += "$220 + tax";
+                    hours.textContent += "3.5 hours";
+
+                    priceForCarTwo.textContent += "200$ + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+
+                } else if (from === "Puntarenas" && to === "Sjo Airport") {
+                    price.textContent += "$150 + tax";
+                    hours.textContent += "2 hours";
+
+                    priceForCarTwo.textContent += "$125 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+
+                } else if (from === "Puntarenas" && to === "Quepos") {
+                    price.textContent += "$150 + tax";
+                    hours.textContent += "1.5 hours";
+
+                    priceForCarTwo.textContent += "$125 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Puntarenas" && to === "Monteverde") {
+                    price.textContent += "$200 + tax";
+                    hours.textContent += "3 hours";
+
+                    priceForCarTwo.textContent += "$185 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+
+                } else if (from === "Puntarenas" && to === "Dominical") {
+                    price.textContent += "$200 + tax";
+                    hours.textContent += "2 hours";
+
+                    priceForCarTwo.textContent += "$180 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+
+                } else if (from === "Puntarenas" && to === "Cahuita") {
+                    price.textContent += "$365 + tax";
+                    hours.textContent += "6 hours";
+                    priceForCarTwo.textContent += "$345 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Puntarenas" && to === "Guanacaste 1") {
+                    price.textContent += "$260 + tax";
+                    hours.textContent += "4 hours";
+                    priceForCarTwo.textContent += "$240 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Puntarenas" && to === "Guanacaste 2") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "4.5 hours";
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Puntarenas" && to === "North Guanacaste") {
+                    price.textContent += "$285 + tax";
+                    hours.textContent += "4 hours";
+                    priceForCarTwo.textContent += "$265 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Puntarenas" && to === "Tortuguero") {
+                    price.textContent += "$320 + tax";
+                    hours.textContent += "4.5 hours";
+                    priceForCarTwo.textContent += "$300 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Puntarenas" && to === "Liberia Airport") {
+                    price.textContent += "$260 + tax";
+                    hours.textContent += "3.5 hours";
+                    priceForCarTwo.textContent += "$240 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                }
+                // From Dominical to 12 places
+                if (from === "Dominical" && to === "San Jose Downtown") {
+                    price.textContent += "$250 + tax";
+                    hours.textContent += "4.5 hours";
+                    priceForCarTwo.textContent += "$230 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Dominical" && to == "Fortuna") {
+                    price.textContent += "$345 + tax";
+                    hours.textContent += "6 hours";
+                    priceForCarTwo.textContent += "$325 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Dominical" && to === "Sjo Airport") {
+                    price.textContent += "$240 + tax";
+                    hours.textContent += "4 hours";
+                    priceForCarTwo.textContent += "$220 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Dominical" && to === "Quepos") {
+                    price.textContent += "$135 + tax";
+                    hours.textContent += "1 hours";
+                    priceForCarTwo.textContent += "$115 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Dominical" && to === "Monteverde") {
+                    price.textContent += "$300 + tax";
+                    hours.textContent += "4.5 hours";
+                    priceForCarTwo.textContent += "$275 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Dominical" && to === "Puntarenas") {
+                    price.textContent += "$200 + tax";
+                    hours.textContent += "2 hours";
+                    priceForCarTwo.textContent += "$180 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Dominical" && to === "Cahuita") {
+                    price.textContent += "$410 + tax";
+                    hours.textContent += "7.5 hours";
+
+                    priceForCarTwo.textContent += "$395 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Dominical" && to === "Guanacaste 1") {
+                    price.textContent += "$400 + tax";
+                    hours.textContent += "6 hours";
+                    priceForCarTwo.textContent += "$380 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Dominical" && to === "Guanacaste 2") {
+                    price.textContent += "$420 + tax";
+                    hours.textContent += "6.5 hours";
+
+                    priceForCarTwo.textContent += "$400 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Dominical" && to === "North Guanacaste") {
+                    price.textContent += "$400 + tax";
+                    hours.textContent += "6 hours";
+                    priceForCarTwo.textContent += "$380 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Dominical" && to === "Tortuguero") {
+                    price.textContent += "$345 + tax";
+                    hours.textContent += "6 hours";
+                    priceForCarTwo.textContent += "$325 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Dominical" && to === "Liberia Airport") {
+                    price.textContent += "$370 + tax";
+                    hours.textContent += "5.5 hours";
+                    priceForCarTwo.textContent += "$350 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                }
+
+                // Fom Guanacaste 1 to 12 Places
+
+                if (from === "Guanacaste 1" && to === "San Jose Downtown") {
+                    price.textContent += "$280 + tax";
+                    hours.textContent += "5.5 hours";
+
+                    priceForCarTwo.textContent += "$260 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to == "Fortuna") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "5 hours";
+
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "Sjo Airport") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "5 hours";
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "Quepos") {
+                    price.textContent += "$350 + tax";
+                    hours.textContent += "5 hours";
+                } else if (from === "Guanacaste 1" && to === "Monteverde") {
+                    price.textContent += "$245 + tax";
+                    hours.textContent += "4 hours";
+
+                    priceForCarTwo.textContent += "$225 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "Puntarenas") {
+                    price.textContent += "$260 + tax";
+                    hours.textContent += "4 hours";
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "Cahuita") {
+                    price.textContent += "$470 + tax";
+                    hours.textContent += "8 hours";
+
+                    priceForCarTwo.textContent += "$450 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "Dominical") {
+                    price.textContent += "$400 + tax";
+                    hours.textContent += "6 hours";
+
+                    priceForCarTwo.textContent += "$380 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "Guanacaste 2") {
+                    price.textContent += "$120 + tax";
+                    hours.textContent += "1.5 hours";
+
+                    priceForCarTwo.textContent += "$100 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "North Guanacaste") {
+                    price.textContent += "$130 + tax";
+                    hours.textContent += "1.5 hours";
+
+                    priceForCarTwo.textContent += "$110 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "Tortuguero") {
+                    price.textContent += "$280 + tax";
+                    hours.textContent += "5.5 hours";
+                } else if (from === "Guanacaste 1" && to === "Liberia Airport") {
+                    price.textContent += "$90 + tax";
+                    hours.textContent += "1 hours";
+
+                    priceForCarTwo.textContent += "$70 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                }
+
+                // Fom Guanacaste 2 to 12 Places
+
+                if (from === "Guanacaste 2" && to === "San Jose Downtown") {
+                    price.textContent += "$310 + tax";
+                    hours.textContent += "5.5 hours";
+
+
+                    priceForCarTwo.textContent += "$290 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 2" && to == "Fortuna") {
+                    price.textContent += "$300 + tax";
+                    hours.textContent += "5.5 hours";
+
+                    priceForCarTwo.textContent += "$280 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 2" && to === "Sjo Airport") {
+                    price.textContent += "$290 + tax";
+                    hours.textContent += "5 hours";
+
+                    priceForCarTwo.textContent += "$280 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 2" && to === "Quepos") {
+                    price.textContent += "$370 + tax";
+                    hours.textContent += "6 hours";
+
+                    priceForCarTwo.textContent += "$350 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 2" && to === "Monteverde") {
+                    price.textContent += "$250 + tax";
+                    hours.textContent += "4 hours";
+
+                    priceForCarTwo.textContent += "$225 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 2" && to === "Puntarenas") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "4.5 hours";
+
+
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 2" && to === "Cahuita") {
+                    price.textContent += "$470 + tax";
+                    hours.textContent += "8.5 hours";
+
+
+                    priceForCarTwo.textContent += "$450 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 2" && to === "Dominical") {
+                    price.textContent += "$420 + tax";
+                    hours.textContent += "6.5 hours";
+
+                    priceForCarTwo.textContent += "$400 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 2" && to === "Guanacaste 1") {
+                    price.textContent += "$120 + tax";
+                    hours.textContent += "1.5 hours";
+
+                    priceForCarTwo.textContent += "$100 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 2" && to === "North Guanacaste") {
+                    price.textContent += "$140 + tax";
+                    hours.textContent += "2 hours";
+
+                    priceForCarTwo.textContent += "$120 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 2" && to === "Tortuguero") {
+                    price.textContent += "$320 + tax";
+                    hours.textContent += "6 hours";
+
+                    priceForCarTwo.textContent += "$300 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 2" && to === "Liberia Airport") {
+                    price.textContent += "$100 + tax";
+                    hours.textContent += "1.5 hours";
+                    priceForCarTwo.textContent += "$80 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                }
+
+                // From Liberia Airport to 12 Places
+                if (from === "Liberia Airport" && to === "San Jose Downtown") {
+                    price.textContent += "$230 + tax";
+                    hours.textContent += "4.5 hours";
+
+                    priceForCarTwo.textContent += "$210 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Liberia Airport" && to == "Fortuna") {
+                    price.textContent += "$220 + tax";
+                    hours.textContent += "3 hours";
+
+                    priceForCarTwo.textContent += "$200 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Liberia Airport" && to === "Sjo Airport") {
+                    price.textContent += "$220 + tax";
+                    hours.textContent += "4 hours";
+                    priceForCarTwo.textContent += "$2000 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Liberia Airport" && to === "Quepos") {
+                    price.textContent += "$320 + tax";
+                    hours.textContent += "4.5 hours";
+                    priceForCarTwo.textContent += "$300 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Liberia Airport" && to === "Monteverde") {
+                    price.textContent += "$200 + tax";
+                    hours.textContent += "3 hours";
+                    priceForCarTwo.textContent += "$185 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Liberia Airport" && to === "Puntarenas") {
+                    price.textContent += "$260 + tax";
+                    hours.textContent += "3.5 hours";
+                    priceForCarTwo.textContent += "$240 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Liberia Airport" && to === "Cahuita") {
+                    price.textContent += "$470 + tax";
+                    hours.textContent += "7 hours";
+
+                    priceForCarTwo.textContent += "$450 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Liberia Airport" && to === "Dominical") {
+                    price.textContent += "$370 + tax";
+                    hours.textContent += "5.5 hours";
+                    priceForCarTwo.textContent += "$350 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Liberia Airport" && to === "Guanacaste 1") {
+                    price.textContent += "$90 + tax";
+                    hours.textContent += "1 hours";
+                    priceForCarTwo.textContent += "$70 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Liberia Airport" && to === "North Guanacaste") {
+                    price.textContent += "$130 + tax";
+                    hours.textContent += "1.5 hours";
+                    priceForCarTwo.textContent += "$110 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Liberia Airport" && to === "Tortuguero") {
+                    price.textContent += "$320 + tax";
+                    hours.textContent += "6 hours";
+                    priceForCarTwo.textContent += "$300 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Liberia Airport" && to === "Guanacaste 2") {
+                    price.textContent += "$100 + tax";
+                    hours.textContent += "1.5 hours";
+                    priceForCarTwo.textContent += "$80 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                }
+
+                // From to San Jose Downtown 12 Places
+
+                if (from === "San Jose Downtown" && to === "Guanacaste 2") {
+                    price.textContent += "$310 + tax";
+                    hours.textContent += "5.5 hours";
+                    priceForCarTwo.textContent += "$290 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "San Jose Downtown" && to == "Fortuna") {
+                    price.textContent += "$210 + tax";
+                    hours.textContent += "3.5 hours";
+                    priceForCarTwo.textContent += "$190 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "San Jose Downtown" && to === "Sjo Airport") {
+                    price.textContent += "$50 + tax";
+                    hours.textContent += "0.5 hours";
+                    priceForCarTwo.textContent += "$40 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "San Jose Downtown" && to === "Quepos") {
+                    price.textContent += "$210 + tax";
+                    hours.textContent += "4 hours";
+                    priceForCarTwo.textContent += "$190 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "San Jose Downtown" && to === "Monteverde") {
+                    price.textContent += "$210 + tax";
+                    hours.textContent += "3.5 hours";
+                    priceForCarTwo.textContent += "$195 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "San Jose Downtown" && to === "Puntarenas") {
+                    price.textContent += "$150 + tax";
+                    hours.textContent += "2.5 hours";
+                    priceForCarTwo.textContent += "$135 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "San Jose Downtown" && to === "Cahuita") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "5 hours";
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "San Jose Downtown" && to === "Dominical") {
+                    price.textContent += "$250 + tax";
+                    hours.textContent += "4.5 hours";
+                    priceForCarTwo.textContent += "$230 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "San Jose Downtown" && to === "Guanacaste 1") {
+                    price.textContent += "$280 + tax";
+                    hours.textContent += "5 hours";
+                    priceForCarTwo.textContent += "$260 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "San Jose Downtown" && to === "North Guanacaste") {
+                    price.textContent += "$280 + tax";
+                    hours.textContent += "5.5 hours";
+                    priceForCarTwo.textContent += "$260 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "San Jose Downtown" && to === "Tortuguero") {
+                    price.textContent += "$200 + tax";
+                    hours.textContent += "2.5 hours";
+                    priceForCarTwo.textContent += "$180 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "San Jose Downtown" && to === "Liberia Airport") {
+                    price.textContent += "$230 + tax";
+                    hours.textContent += "4.5 hours";
+                    priceForCarTwo.textContent += "$210 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                }
+
+                // From Quepos to 12 Places
+
+                if (from === "Quepos" && to === "Guanacaste 2") {
+                    price.textContent += "$370 + tax";
+                    hours.textContent += "6 hours";
+                    priceForCarTwo.textContent += "$350 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Quepos" && to == "Fortuna") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "5.5 hours";
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Quepos" && to === "Sjo Airport") {
+                    price.textContent += "$200 + tax";
+                    hours.textContent += "3.5 hours";
+                    priceForCarTwo.textContent += "$180 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Quepos" && to === "San Jose Downtown") {
+                    price.textContent += "$210 + tax";
+                    hours.textContent += "3.5 hours";
+                    priceForCarTwo.textContent += "$190 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Quepos" && to === "Monteverde") {
+                    price.textContent += "$250 + tax";
+                    hours.textContent += "4 hours";
+                    priceForCarTwo.textContent += "$230 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Quepos" && to === "Puntarenas") {
+                    price.textContent += "$150 + tax";
+                    hours.textContent += "1.5 hours";
+                    priceForCarTwo.textContent += "$125 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Quepos" && to === "Cahuita") {
+                    price.textContent += "$420 + tax";
+                    hours.textContent += "7.5 hours";
+                    priceForCarTwo.textContent += "$400 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Quepos" && to === "Dominical") {
+                    price.textContent += "$135 + tax";
+                    hours.textContent += "1 hours";
+                    priceForCarTwo.textContent += "$115 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Quepos" && to === "Guanacaste 1") {
+                    price.textContent += "$350 + tax";
+                    hours.textContent += "5 hours";
+                    priceForCarTwo.textContent += "$330 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Quepos" && to === "North Guanacaste") {
+                    price.textContent += "$345 + tax";
+                    hours.textContent += "5.5 hours";
+                    priceForCarTwo.textContent += "$325 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Quepos" && to === "Tortuguero") {
+                    price.textContent += "$370 + tax";
+                    hours.textContent += "6 hours";
+                    priceForCarTwo.textContent += "$350 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Quepos" && to === "Liberia Airport") {
+                    price.textContent += "$320 + tax";
+                    hours.textContent += "4.5 hours";
+                    priceForCarTwo.textContent += "$300 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                }
+
+
+                // From Cahuita to 12 Places
+
+                if (from === "Cahuita" && to === "Guanacaste 2") {
+                    price.textContent += "$470 + tax";
+                    hours.textContent += "8.5 hours";
+                    priceForCarTwo.textContent += "$450 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Cahuita" && to == "Fortuna") {
+                    price.textContent += "$330 + tax";
+                    hours.textContent += "6 hours";
+                    priceForCarTwo.textContent += "$310 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Cahuita" && to === "Sjo Airport") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "5 hours";
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Cahuita" && to === "San Jose Downtown") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "4.5 hours";
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Cahuita" && to === "Monteverde") {
+                    price.textContent += "$410 + tax";
+                    hours.textContent += "7.5 hours";
+                    priceForCarTwo.textContent += "$395 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Cahuita" && to === "Puntarenas") {
+                    price.textContent += "$365 + tax";
+                    hours.textContent += "6 hours";
+                    priceForCarTwo.textContent += "$345 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Cahuita" && to === "Quepos") {
+                    price.textContent += "$420 + tax";
+                    hours.textContent += "7.5 hours";
+                    priceForCarTwo.textContent += "$400 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Cahuita" && to === "Dominical") {
+                    price.textContent += "$410 + tax";
+                    hours.textContent += "7.5 hours";
+                    priceForCarTwo.textContent += "$395 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Cahuita" && to === "Guanacaste 1") {
+                    price.textContent += "$470 + tax";
+                    hours.textContent += "8 hours";
+                    priceForCarTwo.textContent += "$450 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Cahuita" && to === "North Guanacaste") {
+                    price.textContent += "$400 + tax";
+                    hours.textContent += "6 hours";
+
+                    priceForCarTwo.textContent += "$380 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Cahuita" && to === "Tortuguero") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "4.5 hours";
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Cahuita" && to === "Liberia Airport") {
+                    price.textContent += "$470 + tax";
+                    hours.textContent += "7 hours";
+                    priceForCarTwo.textContent += "$450 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                }
+
+                // From North Guanacaste to 12 Places
+
+                if (from === "North Guanacaste" && to === "Guanacaste 2") {
+                    price.textContent += "$140 + tax";
+                    hours.textContent += "2 hours";
+                    priceForCarTwo.textContent += "$120 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "North Guanacaste" && to == "Fortuna") {
+                    price.textContent += "$280 + tax";
+                    hours.textContent += "5.5 hours";
+                    priceForCarTwo.textContent += "$260 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "North Guanacaste" && to === "Sjo Airport") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "5 hours";
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "North Guanacaste" && to === "San Jose Downtown") {
+                    price.textContent += "$280 + tax";
+                    hours.textContent += "5.5 hours";
+                    priceForCarTwo.textContent += "$260 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "North Guanacaste" && to === "Monteverde") {
+                    price.textContent += "$240 + tax";
+                    hours.textContent += "3.5 hours";
+                    priceForCarTwo.textContent += "$220 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "North Guanacaste" && to === "Puntarenas") {
+                    price.textContent += "$285 + tax";
+                    hours.textContent += "4.5 hours";
+                    priceForCarTwo.textContent += "$285 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "North Guanacaste" && to === "Cahuita") {
+                    price.textContent += "$400 + tax";
+                    hours.textContent += "8 hours";
+
+                    priceForCarTwo.textContent += "$450 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "North Guanacaste" && to === "Dominical") {
+                    price.textContent += "$400 + tax";
+                    hours.textContent += "6 hours";
+
+                    priceForCarTwo.textContent += "$380 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "North Guanacaste" && to === "Guanacaste 1") {
+                    price.textContent += "$130 + tax";
+                    hours.textContent += "1.5 hours";
+                    priceForCarTwo.textContent += "$110 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "North Guanacaste" && to === "Quepos") {
+                    price.textContent += "$345 + tax";
+                    hours.textContent += "5.5 hours";
+                    priceForCarTwo.textContent += "$325 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "North Guanacaste" && to === "Tortuguero") {
+                    price.textContent += "$320 + tax";
+                    hours.textContent += "6 hours";
+                    priceForCarTwo.textContent += "$300 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "North Guanacaste" && to === "Liberia Airport") {
+                    price.textContent += "$130 + tax";
+                    hours.textContent += "4.5 hours";
+                    priceForCarTwo.textContent += "$110 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                }
+
+                // From Fortuna to 12 Places
+                if (from === "Fortuna" && to === "Guanacaste 2") {
+                    price.textContent += "$300 + tax";
+                    hours.textContent += "5.5 hours";
+                    priceForCarTwo.textContent += "$280 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Fortuna" && to == "North Guanacaste") {
+                    price.textContent += "$280 + tax";
+                    hours.textContent += "5.5 hours";
+                    priceForCarTwo.textContent += "$260 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Fortuna" && to === "Sjo Airport") {
+                    price.textContent += "$200 + tax";
+                    hours.textContent += "3 hours";
+                    priceForCarTwo.textContent += "$180 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Fortuna" && to === "San Jose Downtown") {
+                    price.textContent += "$210 + tax";
+                    hours.textContent += "3.5 hours";
+                    priceForCarTwo.textContent += "$190 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Fortuna" && to === "Monteverde") {
+                    price.textContent += "$220 + tax";
+                    hours.textContent += "4 hours";
+
+                    priceForCarTwo.textContent += "$200 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Fortuna" && to === "Puntarenas") {
+                    price.textContent += "$220 + tax";
+                    hours.textContent += "3.5 hours";
+                    priceForCarTwo.textContent += "$200 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Fortuna" && to === "Cahuita") {
+                    price.textContent += "$330 + tax";
+                    hours.textContent += "6 hours";
+                    priceForCarTwo.textContent += "$310 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Fortuna" && to === "Dominical") {
+                    price.textContent += "$345 + tax";
+                    hours.textContent += "6 hours";
+                    priceForCarTwo.textContent += "$325 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Fortuna" && to === "Guanacaste 1") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "5 hours";
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Fortuna" && to === "Quepos") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "5.5 hours";
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Fortuna" && to === "Tortuguero") {
+                    price.textContent += "$250 + tax";
+                    hours.textContent += "4.5 hours";
+                    priceForCarTwo.textContent += "$230 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Fortuna" && to === "Liberia Airport") {
+                    price.textContent += "$220 + tax";
+                    hours.textContent += "3 hours";
+                    priceForCarTwo.textContent += "$200 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                }
+
+                // From Monteverde to 12 Place
+                if (from === "Monteverde" && to === "Guanacaste 2") {
+                    price.textContent += "$250 + tax";
+                    hours.textContent += "4.5 hours";
+
+                    priceForCarTwo.textContent += "$235 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Monteverde" && to == "North Guanacaste") {
+                    price.textContent += "$240 + tax";
+                    hours.textContent += "3.5 hours";
+                    priceForCarTwo.textContent += "$220 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Monteverde" && to === "Sjo Airport") {
+                    price.textContent += "$200 + tax";
+                    hours.textContent += "3 hours";
+                    priceForCarTwo.textContent += "$185 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Monteverde" && to === "San Jose Downtown") {
+                    price.textContent += "$210 + tax";
+                    hours.textContent += "3.5 hours";
+                    priceForCarTwo.textContent += "$195 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Monteverde" && to === "Fortuna") {
+                    price.textContent += "$220 + tax";
+                    hours.textContent += "4 hours";
+                    priceForCarTwo.textContent += "$200 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Monteverde" && to === "Puntarenas") {
+                    price.textContent += "$200 + tax";
+                    hours.textContent += "3 hours";
+                    priceForCarTwo.textContent += "$185 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Monteverde" && to === "Cahuita") {
+                    price.textContent += "$410 + tax";
+                    hours.textContent += "4.5 hours";
+
+                    priceForCarTwo.textContent += "$395 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Monteverde" && to === "Dominical") {
+                    price.textContent += "$300 + tax";
+                    hours.textContent += "4.5 hours";
+                    priceForCarTwo.textContent += "$275 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Monteverde" && to === "Guanacaste 1") {
+                    price.textContent += "$245 + tax";
+                    hours.textContent += "4 hours";
+                    priceForCarTwo.textContent += "$225 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Monteverde" && to === "Quepos") {
+                    price.textContent += "$250 + tax";
+                    hours.textContent += "4 hours";
+                    priceForCarTwo.textContent += "$230 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Monteverde" && to === "Tortuguero") {
+                    price.textContent += "$370 + tax";
+                    hours.textContent += "6.5 hours";
+                    priceForCarTwo.textContent += "$350 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Monteverde" && to === "Liberia Airport") {
+                    price.textContent += "$200 + tax";
+                    hours.textContent += "3 hours";
+                    priceForCarTwo.textContent += "$185 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                }
+
+                // From Guanacaste 1 to 12 Places
+                if (from === "Guanacaste 1" && to === "Guanacaste 2") {
+                    price.textContent += "$120 + tax";
+                    hours.textContent += "1.5 hours";
+                    priceForCarTwo.textContent += "$100 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to == "North Guanacaste") {
+                    price.textContent += "$130 + tax";
+                    hours.textContent += "1.5 hours";
+                    priceForCarTwo.textContent += "$110 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "Sjo Airport") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "5 hours";
+
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "San Jose Downtown") {
+                    price.textContent += "$280 + tax";
+                    hours.textContent += "5.5 hours";
+                    priceForCarTwo.textContent += "$260 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "Fortuna") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "5 hours";
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "Puntarenas") {
+                    price.textContent += "$260 + tax";
+                    hours.textContent += "4 hours";
+                    priceForCarTwo.textContent += "$265 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "Cahuita") {
+                    price.textContent += "$470 + tax";
+                    hours.textContent += "8 hours";
+                    priceForCarTwo.textContent += "$450 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "Dominical") {
+                    price.textContent += "$400 + tax";
+                    hours.textContent += "6 hours";
+                    priceForCarTwo.textContent += "$380 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "Monteverde") {
+                    price.textContent += "$245 + tax";
+                    hours.textContent += "4 hours";
+                    priceForCarTwo.textContent += "$225 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "Quepos") {
+                    price.textContent += "$350 + tax";
+                    hours.textContent += "5 hours";
+                    priceForCarTwo.textContent += "$330 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "Tortuguero") {
+                    price.textContent += "$300 + tax";
+                    hours.textContent += "5.5 hours";
+                    priceForCarTwo.textContent += "$280 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Guanacaste 1" && to === "Liberia Airport") {
+                    price.textContent += "$90 + tax";
+                    hours.textContent += "1 hours";
+
+                    priceForCarTwo.textContent += "$70 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                }
+
+                if (from === "Tortuguero" && to === "Guanacaste 2") {
+                    price.textContent += "$320 + tax";
+                    hours.textContent += "6 hours";
+
+                    priceForCarTwo.textContent += "$300 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Tortuguero" && to == "North Guanacaste") {
+                    price.textContent += "$320 + tax";
+                    hours.textContent += "6 hours";
+
+                    priceForCarTwo.textContent += "$160 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Tortuguero" && to === "Sjo Airport") {
+                    price.textContent += "$150 + tax";
+                    hours.textContent += "2.5 hours";
+                    priceForCarTwo.textContent += "$120 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Tortuguero" && to === "San Jose Downtown") {
+                    price.textContent += "$200 + tax";
+                    hours.textContent += "2.5 hours";
+                    priceForCarTwo.textContent += "$180 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Tortuguero" && to === "Monteverde") {
+                    price.textContent += "$370 + tax";
+                    hours.textContent += "6.5 hours";
+
+                    priceForCarTwo.textContent += "$350 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Tortuguero" && to === "Puntarenas") {
+                    price.textContent += "$320 + tax";
+                    hours.textContent += "4.5 hours";
+                    priceForCarTwo.textContent += "$300 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Tortuguero" && to === "Cahuita") {
+                    price.textContent += "$270 + tax";
+                    hours.textContent += "4.5 hours";
+
+                    priceForCarTwo.textContent += "$250 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Tortuguero" && to === "Dominical") {
+                    price.textContent += "$345 + tax";
+                    hours.textContent += "6 hours";
+
+                    priceForCarTwo.textContent += "$325 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Tortuguero" && to === "Guanacaste 1") {
+                    price.textContent += "$320 + tax";
+                    hours.textContent += "6 hours";
+                    priceForCarTwo.textContent += "$300 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Tortuguero" && to === "Quepos") {
+                    price.textContent += "$370 + tax";
+                    hours.textContent += "6.5 hours";
+
+                    priceForCarTwo.textContent += "$350 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Tortuguero" && to === "Fortuna") {
+                    price.textContent += "$250 + tax";
+                    hours.textContent += "4.5 hours";
+
+                    priceForCarTwo.textContent += "$230 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === "Tortuguero" && to === "Liberia Airport") {
+                    price.textContent += "$320 + tax";
+                    hours.textContent += "6 hours";
+
+                    priceForCarTwo.textContent += "$300 + tax";
+                    hoursForCarTwo.textContent += hours.textContent;
+                } else if (from === to) {
+                    alert("Please enter valid input");
+                    price = "";
+                    priceForCarTwo = "";
+                    hours = "";
+                    hoursForCarTwo = "";
+                    window.location.href = "index.html";
+                }
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>
